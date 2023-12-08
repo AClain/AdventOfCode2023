@@ -5,12 +5,6 @@ $input = explode("\n", file_get_contents('./input.txt'));
 $seeds = [];
 $wasModified = [];
 
-function dd(...$var)
-{
-	var_dump(...$var);
-	exit();
-}
-
 foreach ($input as $y => $line) {
 	if (str_contains($line, "seeds:")) {
 		preg_match_all('/(\d+)(\s){0,1}/', $line, $matching);
