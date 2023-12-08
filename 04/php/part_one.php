@@ -5,6 +5,7 @@ $input = explode("\n", str_replace("  ", " ", file_get_contents('./input.txt')))
 $result = 0;
 
 foreach ($input as $line) {
+	$line = preg_replace('/(Card)(\s){1,}(\d+)(:)(\s)/', '', $line);
 	preg_match_all('/((\d+)(\s){0,1}){1,}(|){1}((\d+)(\s){0,1})/', $line, $matchingArrays);
 
 	$winningList = explode(" ", trim($matchingArrays[0][0]));
